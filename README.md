@@ -54,25 +54,33 @@ Green.
 
 1. Complete the scenario `restrict to movies with `PG` or `R` ratings` in `filter_movie_list.feature`. You can use existing step definitions in `web_steps.rb` to check and uncheck the appropriate boxes, submit the form, and check whether the correct movies appear (and just as importantly, movies with unselected ratings do not appear).
 
-2. Since it's tedious to repeat steps such as When I check the 'PG' checkbox, And I check the 'R' checkbox, etc., create a step definition to match a step such as:
+2. Since it's tedious to repeat steps such as When I check the 'PG' checkbox, 
+And I check the 'R' checkbox, etc., create a step definition to match a step such as:
 `Given I check the following ratings: G, PG, R`
 This single step definition should only check the specified boxes, and
 leave the other boxes as they were. HINT: this step definition can reuse
 existing steps in  `web_steps.rb` , as shown in the example in Section
 7.9 in ESaaS.
 
-3. For the scenario `all ratings selected`, it would be tedious to use `And I should see` to name every single movie. That would detract from the goal of BDD to convey the behavioral intent of the user story. To fix this, create step definitions that will match steps of the form: 
+3. For the scenario `all ratings selected`, it would be tedious to use `And I should see` 
+to name every single movie. That would detract from the goal of BDD to convey 
+the behavioral intent of the user story. To fix this, create step definitions 
+that will match steps of the form: 
 `Then I should see all of the movies` in `movie_steps.rb`. 
-HINT: Consider counting the number of rows in the table to implement these steps. If you have computed rows as the number of table rows, you can use the assertion 
+HINT: Consider counting the number of rows in the table to implement these steps. 
+If you have computed rows as the number of table rows, you can use the assertion 
 `rows.should == value`
 to fail the test in case the values don't match.
 Update: You no longer need to implement the scenario for no ratings selected.
 
-4. Use your new step definitions to complete the scenario `all ratings selected`. SUCCESS is when all scenarios in `filter_movie_list.feature` pass with all steps green.
+4. Use your new step definitions to complete the scenario `all ratings selected`. 
+5. SUCCESS is when all scenarios in `filter_movie_list.feature` pass with all steps green.
 
 **Part 3: Happy paths for sorting movies by title and by release date**
 
-1. Since the scenarios in `sort_movie_list.feature` involve sorting, you will need the ability to have steps that test whether one movie appears before another in the output listing. Create a step definition that matches a step such as 
+1. Since the scenarios in `sort_movie_list.feature` involve sorting, 
+2.you will need the ability to have steps that test whether one movie appears 
+before another in the output listing. Create a step definition that matches a step such as 
 `Then I should see "Aladdin" before "Amelie"`
 
 ### HINTS
@@ -88,7 +96,9 @@ Update: You no longer need to implement the scenario for no ratings selected.
   another in a larger string, though that's not the only possible
   strategy. 
 
-2. Use the step definition you create above to complete the scenarios `sort movies alphabetically` and `sort movies in increasing order of release date` in `sort_movie_list.feature`.
+2. Use the step definition you create above to complete the scenarios 
+`sort movies alphabetically` and `sort movies in increasing order of release date` 
+in `sort_movie_list.feature`.
 
 **SUCCESS** is all steps of all scenarios in both feature files passing Green.
 
